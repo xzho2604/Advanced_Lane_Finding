@@ -136,7 +136,7 @@ After we get the curvature for both lane ,then we could find the very bottom of 
 In the hlper Function for Finding Lane and Ploynomial fit:
 I have used warp_back() function to restore the original image from the bird eye view with the poly nomial fit painted on the frame and below is just an example of one of the fit on the road.
 
-![alt text](/output_images/exmaple_fit.jpg)
+![alt text](output_images/example_fit.jpg)
 
 ---
 
