@@ -1,6 +1,4 @@
-## Writeup Template
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
 
 ---
 
@@ -57,7 +55,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 #### 1. Provide an example of a distortion-corrected image.
 In the first Secton of the cell:
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
-![alt text][/examples/undist.jpg]
+![alt text](/examples/undist.jpg)
 
 Since previously we have already get all the parametres that we need to get the distortion matrix to transform the image to hte undistorted one from the previous cameara calibration step ,so we could simply use :
 ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
@@ -68,7 +66,7 @@ to undistitort an image.
 In the Helper functions for binary threshholding and perspective transformation section:
 I used a combination of color and gradient thresholds to generate a binary image (see the code at Helper functions for binary threshholding and perspective transformation.)  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
-![alt text][/output_images/binary_thresh.jpg]
+![alt text](/output_images/binary_thresh.jpg)
 
 The channel that I choose is the Saturation channel with Light channel together with x sobel gradient.
 with the combined logic of : ((s & l) | sxbinary)
@@ -101,8 +99,8 @@ Given the 4 points of the src points on the original image as well as the destin
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
-![alt text][/output_images/perspective1.jpg]
-![alt text][/output_images/perspective2.jpg]
+![alt text](/output_images/perspective1.jpg)
+![alt text](/output_images/perspective2.jpg)
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 In the Helper Function for Finding Lane and Ploynomial fit section:
@@ -112,8 +110,8 @@ Then we could fit the left lane pixels and right lane pixles separately to find 
 So for the folloing frame we could just search the area of the prevous poly fit with some margins to the right and to the left.
 as the iamge shown below:
 
-![alt text][/output_images/poly_fit1.jpg]
-![alt text][/output_images/poly_fit2.jpg]
+![alt text](/output_images/poly_fit1.jpg)
+![alt text](/output_images/poly_fit2.jpg)
 
 
 
@@ -138,7 +136,7 @@ After we get the curvature for both lane ,then we could find the very bottom of 
 In the hlper Function for Finding Lane and Ploynomial fit:
 I have used warp_back() function to restore the original image from the bird eye view with the poly nomial fit painted on the frame and below is just an example of one of the fit on the road.
 
-![alt text][/output_images/exmaple_fit.jpg]
+![alt text](/output_images/exmaple_fit.jpg)
 
 ---
 
@@ -146,7 +144,7 @@ I have used warp_back() function to restore the original image from the bird eye
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](https://youtu.be/ViWPq8g4XRY)
 
 ---
 
