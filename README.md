@@ -1,7 +1,7 @@
 
 
-
 ### Advanced Lane Finding Project
+![lane_video](lane.gif) 
 
 The goals / steps of this project are the following:
 
